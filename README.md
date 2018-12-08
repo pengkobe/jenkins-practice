@@ -33,7 +33,7 @@ learn how to use jenkins to build and deploy projects
     }
     ```
 
-2. 选择多分支流水线
+2. 选择多分支流水线[失败]，直接选择流水线[成功]
 3. 添加资源
 
 ### Running multiple steps
@@ -59,3 +59,35 @@ learn how to use jenkins to build and deploy projects
 ### deploy
 
 其实就是在一个特定的 stage 执行相应的脚本啦！
+
+## Tutorials
+
+### Build a Node.js and React app with npm
+
+教你如何基于 jenkins 构建 React 应用
+
+## User Handbook
+
+### Installing Jenkins
+
+- docker，官方长期维护 Jenkins 镜像 `jenkinsci/blueocean`, 当然，除了这个之外，还有一些其它镜像也可以使用，不过，他们都不包含 `Blue Ocean` ,需要通过插件方式进行安装
+
+  ```bash
+    ## 安装与运行
+    docker run ^
+    -u root ^
+    --rm ^
+    -d ^
+    -p 8080:8080 ^
+    -p 50000:50000 ^
+    -v jenkins-data:/var/jenkins_home ^
+    -v /var/run/docker.sock:/var/run/docker.sock ^
+    jenkinsci/blueocean
+    # 执行命令
+    docker exec -it jenkins-blueocean bash
+    ## 查看日志
+    docker logs jenkins-blueocean
+  ```
+
+- WAR file，需要预先安装 Java 的环境
+- 基于命令行的安装
